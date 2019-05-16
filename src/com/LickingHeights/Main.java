@@ -1,6 +1,7 @@
 package com.LickingHeights;
 
 
+import java.util.Objects;
 import java.util.Scanner;
 
 
@@ -8,9 +9,10 @@ public class Main {
     public static void main(String[] args) {
         Scanner keyboard = new Scanner(System.in);
         int userScore = 0, comScore = 0;
+        String userPlay;
         System.out.println("Enter in your play. (R = rock, P = paper, S = scissors)");
         while (true) {
-            String userPlay;
+
             String red = ("\u001B[31m");
             String cReset = "\u001B[0m";
             String green = "\u001B[32m";
@@ -48,15 +50,21 @@ public class Main {
             } else if (userPlay.equals("P") && (comPlay[comInt].equals("S"))) {
                 System.out.println("Scissors Beats Paper," + red + "YOU LOSE" + cReset);
                 comScore++;
-            }
-            if (userScore == 5) {
+            } else if (userScore == 5) {
                 System.out.println("You Win the Game!!! , enter another play to start again.");
             } else if (comScore == 5) {
                 System.out.println("You Lose, Better Luck Next Time , enter another play to start again.");
+
+            } else if (userPlay.equals("RESET")) {
+                userScore = 5;
+                comScore = 5;
             }
 
+                System.out.println("Computer = " + comScore + " - You = " + userScore);
+            if (userScore == 5 && comScore ==5){
+                System.out.println("The Game Has Been Reset.");
+            }
 
-            System.out.println("Computer = " + comScore + " - You = " + userScore);
 
         }
     }
