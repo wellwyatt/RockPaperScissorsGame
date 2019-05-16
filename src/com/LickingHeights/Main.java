@@ -11,6 +11,7 @@ public class Main {
         int userScore = 0, comScore = 0;
         String userPlay;
         System.out.println("Enter in your play. (R = rock, P = paper, S = scissors)");
+        System.out.println("Type \'reset\' to Start Over");
         while (true) {
 
             String red = ("\u001B[31m");
