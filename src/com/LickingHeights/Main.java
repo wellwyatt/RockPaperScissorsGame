@@ -50,18 +50,19 @@ public class Main {
             } else if (userPlay.equals("P") && (comPlay[comInt].equals("S"))) {
                 System.out.println("Scissors Beats Paper," + red + "YOU LOSE" + cReset);
                 comScore++;
-            } else if (userScore == 5) {
+            }
+            if (userScore == 5) {
                 System.out.println("You Win the Game!!! , enter another play to start again.");
             } else if (comScore == 5) {
                 System.out.println("You Lose, Better Luck Next Time , enter another play to start again.");
 
             } else if (userPlay.equals("RESET")) {
-                userScore = 5;
-                comScore = 5;
+                userScore = 0;
+                comScore = 0;
             }
 
-                System.out.println("Computer = " + comScore + " - You = " + userScore);
-            if (userScore == 5 && comScore ==5){
+            System.out.println(("\033[1;96m") + "Computer = " + comScore + " - You = " + userScore + cReset);
+            if (userScore == 0 && comScore == 0) {
                 System.out.println("The Game Has Been Reset.");
             }
 
